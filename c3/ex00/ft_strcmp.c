@@ -6,7 +6,7 @@
 /*   By: wshou-xi <wshou-xi@student.42kl.edu.m      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 16:43:19 by wshou-xi          #+#    #+#             */
-/*   Updated: 2025/03/16 16:43:21 by wshou-xi         ###   ########.fr       */
+/*   Updated: 2025/03/17 11:07:47 by wshou-xi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,8 @@ int	ft_strcmp(char *s1, char *s2)
 	int	i;
 
 	i = 0;
-	while (s1[i] || s2[i] != '\0')
-	{
-		if ((s1[i] == s2[i]))
-		{
+	if (s1[i] || s2[i])
+		while (s1[i] == s2[i])
 			i++;
-		}
-		else if (s1[i] > s2[i])
-		{
-			return (1);
-		}
-		else
-		{
-			return (-1);
-		}
-	}
-	return (0);
+	return (s1[i] - s2[i]);
 }
