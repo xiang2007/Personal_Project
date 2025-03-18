@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
-
 char	*ft_strcat(char *dest, char *src)
 {
 	int	j;
@@ -29,21 +27,4 @@ char	*ft_strcat(char *dest, char *src)
 	}
 	dest[i] = '\0';
 	return (dest);
-}
-
-void	print(char *str)
-{
-	while (*str)
-	{
-		write(1, str++, 1);
-	}
-}
-
-int	main(void)
-{
-	char	str1[30] = "First";
-	char	*str2 = "";
-
-	ft_strcat(str1, str2);
-	print(str1);
 }

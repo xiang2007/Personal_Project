@@ -6,7 +6,7 @@
 /*   By: wshou-xi <wshou-xi@student.42kl.edu.m      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 13:39:33 by wshou-xi          #+#    #+#             */
-/*   Updated: 2025/03/11 13:39:52 by wshou-xi         ###   ########.fr       */
+/*   Updated: 2025/03/18 11:50:21 by wshou-xi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,16 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 
 	i = 0;
 	j = 0;
-	while (dest[i] != '\0')
-	{
+	while (dest[i])
 		i++;
-	}
-	while (src[j] != '\0')
+	while (src[j])
 	{
-		if (j != nb)
+		if (j < nb)
 		{
 			dest[i] = src[j];
-			j++;
 			i++;
 		}
-		else
-		{
-			return (0);
-		}
+		j++;
 	}
 	return (dest);
 }
