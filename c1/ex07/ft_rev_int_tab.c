@@ -10,15 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putstr(int n)
+#include <stdio.h>
+
+void	ft_putnbr(int n)
 {
 	char	c;
 
-	if (n > 9)
+	if (n >= 10)
 	{
-		ft_putstr(n / 10);
-		c = (n % 10) + '0';
+		ft_putnbr(n / 10);
 	}
+	c = (n % 10) + '0';
+	printf("%c", c);
 }
 
 void	ft_int_rev_tab(int *tab, int size)
@@ -28,7 +31,17 @@ void	ft_int_rev_tab(int *tab, int size)
 	i = size - 1;
 	while (i >= 0)
 	{
-		ft_putstr(tab[i]);
+		ft_putnbr(tab[i]);
 		i--;
 	}
 }
+
+int	main(void)
+{
+	int	tab[] = {132145879,879546321};
+	int	size = sizeof(tab) / sizeof(tab[0]);
+
+	ft_int_rev_tab(tab, size);
+	return (0);
+}
+
