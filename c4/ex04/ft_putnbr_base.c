@@ -62,6 +62,11 @@ void    ft_putnbr_base(int nbr, char *base)
     len = ft_strlen(base);
     sign = ft_check(base);
     dup = ft_check_dup(len, base);
+    if (nbr < 0)
+    {
+        write(1, "-", 1);
+        nbr *= -1;
+    }
     if (sign == 1 && dup == 1 && len > 1)
     {
         if (nbr >= len)
@@ -74,5 +79,5 @@ void    ft_putnbr_base(int nbr, char *base)
 
 int main()
 {
-    ft_putnbr_base(10000000,"ABCDEFG");
+    ft_putnbr_base(100,"01");
 }
